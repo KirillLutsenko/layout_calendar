@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
 
-  margin: 0 auto;
+  margin: 100px auto;
   width: 7 * ($block-side + $space-size);
 
   div {
@@ -30,7 +30,7 @@
 @each $number, $day in $days {
 
   .calendar-#{$day} > div:nth-child(1) {
-    margin-left: #{$number*($space-size+$block-side)};
+    margin-left: #{$number * ($space-size + $block-side)};
   }
 }
 
