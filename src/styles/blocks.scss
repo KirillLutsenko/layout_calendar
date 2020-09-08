@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
 
-  margin: $block-side auto;
+  margin: 0 auto;
   width: 7 * ($block-side + $space-size);
 
   div {
@@ -27,20 +27,22 @@
   }
 }
 
-@each $day in $days {
-  .calendar-#{$day} > div:first-child {
-    margin-left: $block-side * (index($days, $day)-1) + index($days, $day)-1;
+@each $number, $day in $days {
+
+  .calendar-#{$day} > div:nth-child(1) {
+    margin-left: #{$number*($space-size+$block-side)};
   }
 }
-  
-@for $j from 28 through 31 {
-  @for $i from 1 through  $j {
-    .calendar-#{$j} > div:nth-child(#{$i}):before {
-      content: "#{$i}";
-    }
+
+@for $i from 1 through 31 {
+  .calendar > div:nth-child(#{$i})::before {
+    content: "#{$i}";
   }
-  @for $k from $j+1 through 31 {
-    .calendar-#{$j} > div:nth-child(#{$k}) {
+}
+
+@for $i from 28 through 31 {
+  .calendar-#{$i} {
+    & > div:nth-child(n + #{$i + 1}) {
       display: none;
     }
   }
