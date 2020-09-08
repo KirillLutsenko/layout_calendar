@@ -16,13 +16,13 @@
     border: 1px solid $block-color;
 
     background-color: $block-background;
+    cursor: pointer;
 
     transition: transform ease 0.5s;
 
     &:hover {
       transform: translateY(-20px);
       background-color: pink;
-      cursor: pointer;
     }
   }
 }
