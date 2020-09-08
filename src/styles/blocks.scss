@@ -9,11 +9,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     height: $block-side;
     width: $block-side;
     margin: 0 $space-size $space-size 0;
-    background-color: $block-background;
     border: 1px solid $block-color;
+
+    background-color: $block-background;
+
     transition: transform ease 0.5s;
 
     &:hover {
